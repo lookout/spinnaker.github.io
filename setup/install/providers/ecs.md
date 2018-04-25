@@ -65,8 +65,11 @@ You may create IAM roles that have the `ecs-tasks.amazonaws.com` trust relations
 You may create [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html) using Cloudwatch Alarms (tracking e.g. CPU utilization of an ECS service, or a custom metric) that have an autoscaling action.  These alarms will be available for you to clone from when deploying new server groups, and can be selected in the deploy server group modal in the UI.       
 
 ### Halyard
+In the following example, `ecs-account-name` is the name of the ECS account, and `aws-account-name` is the name of a previously added, valid AWS account.  Do note that the ECS account will use credentials from the corresponding AWS account.
 
-Halyard support is in progress.  
+```bash
+hal config provider ecs account add ecs-account-name --aws-account aws-account-name
+```
 
 ### Clouddriver yaml properties
 
